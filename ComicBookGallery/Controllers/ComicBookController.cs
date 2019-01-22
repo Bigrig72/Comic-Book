@@ -10,11 +10,19 @@ namespace ComicBookGallery.Controllers
     {
         public ActionResult Detail()
         {
-            if(DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+            ViewBag.SeriesTitle = "The amazing Spider Man";
+            ViewBag.IssueNumber = 700;
+            ViewBag.Description = "<p>Final issue! Witness the final hour";
+            ViewBag.Artists = new string[]
             {
-                return Redirect("/");
-            }
-            return Content ("hello from the commic books controller");        
+                    "Script: Dan Slott",
+                    "Pencils: Humberto Ramos",
+                    "Inks: Victor Olazaba",
+                    "Colors: Edgar Delgado",
+                    "Letters: Chris Eliopoulos"
+            };
+        
+            return View();     
         }
     }
 }
